@@ -44,6 +44,7 @@
     "jsdom": "^30.0.1",
     "npm-run-all2": "^9.0.3",
     "prettier": "3.9.6",
+    "sass-embedded": "^1.105.1",
     "typescript": "~6.0.0",
     "unplugin-auto-import": "^21.1.0",
     "unplugin-vue-components": "^32.1.0",

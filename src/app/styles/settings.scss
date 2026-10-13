@@ -1,0 +1,10 @@
+@forward 'vuetify/settings' with (
+  $grid-breakpoints: (
+    'xs': 0,
+    'sm': 425px,
+    'md': 640px,
+    'lg': 768px,
+    'xl': 1200px,
+    'xxl': 1360px,
+  )
+);

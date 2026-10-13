@@ -26,6 +26,16 @@ const vuetify = createVuetify({
   components,
   directives,
   theme: { defaultTheme: 'dark' },
+  display: {
+      thresholds: {
+        xs: 0,
+        sm: 425,
+        md: 640,
+        lg: 768,
+        xl: 1200,
+        xxl: 1360,
+      },
+  },
 })
 const app = createApp(App).use(router).use(pinia).use(vuetify).use(i18n)
 

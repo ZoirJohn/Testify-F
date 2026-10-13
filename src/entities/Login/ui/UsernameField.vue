@@ -7,6 +7,7 @@ function required(value: string) {
   if (!value) {
     return requiredMsg.value
   }
+  return true
 }
 const rules = [required]
 </script>

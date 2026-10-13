@@ -10,7 +10,7 @@ import {map} from "./resolveHelper.ts"
 export default defineConfig({
   plugins: [
     vue(),
-    vuetify({ autoImport: true }),
+    vuetify({ autoImport: true, styles:{configFile:"src/app/styles/settings.scss"} }),
     vueDevTools(),
     AutoImport({
       imports: [

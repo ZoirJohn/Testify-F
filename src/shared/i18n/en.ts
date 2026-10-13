@@ -4,6 +4,8 @@ export const en = {
     loginPasswordLabel: 'password',
     loginUsernameRequired: 'username is required',
     loginPasswordRequired: 'password is required',
+    loginPasswordLength: "minimum length should be ",
     loginButtonLabel: 'login',
+    loginFormTitle: 'login'
   },
 }
