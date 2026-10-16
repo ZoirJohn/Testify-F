@@ -11,6 +11,7 @@ export default mergeConfig(
       root: fileURLToPath(new URL('./', import.meta.url)),
       globals:true,
       server: { deps: { inline: ['vuetify'] } },
+      setupFiles:"./src/__tests__/setup.ts"
     },
   }),
 )

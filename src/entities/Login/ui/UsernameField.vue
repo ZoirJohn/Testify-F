@@ -13,7 +13,7 @@ const rules = [required]
 </script>
 
 <template>
-  <TextField :rules="rules" :label="inputLabel" />
+  <TextField :rules="rules" :label="inputLabel" aria-label="username_field" />
 </template>
 
 <style scoped></style>
