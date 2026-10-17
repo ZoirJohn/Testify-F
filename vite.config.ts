@@ -7,10 +7,12 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import {map} from "./resolveHelper.ts"
 
+const isComponent = (name: string) => /^[A-Z]/.test(name) && /[a-z]/.test(name)
+
 export default defineConfig({
   plugins: [
     vue(),
-    vuetify({ autoImport: true, styles:{configFile:"src/app/styles/settings.scss"} }),
+    vuetify({ autoImport: true, styles: { configFile: 'src/app/styles/settings.scss' } }),
     vueDevTools(),
     AutoImport({
       imports: [
@@ -26,13 +28,19 @@ export default defineConfig({
       eslintrc: { enabled: true },
       dts: 'src/app/types/auto-import.d.ts',
       vueTemplate: true,
+      resolvers: [
+        (name) => {
+          const from = map.get(name)
+          if (from && !isComponent(name)) return { name, from }
+        },
+      ],
     }),
     Components({
       dirs: ['src/shared/ui'],
       resolvers: [
         (name) => {
           const from = map.get(name)
-          if (from) return { name, from }
+          if (from && isComponent(name)) return { name, from }
         },
       ],
       dts: 'src/app/types/components.d.ts',
