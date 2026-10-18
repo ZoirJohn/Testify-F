@@ -9,7 +9,9 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue').EffectScope
+  const MAXIMUM_LENGTH: typeof import('@/shared/constants').MAXIMUM_LENGTH
   const MINIMUM_LENGTH: typeof import('@/shared/constants').MINIMUM_LENGTH
+  const SPECIAL_CHARACTERS: typeof import('@/shared/constants').SPECIAL_CHARACTERS
   const acceptHMRUpdate: typeof import('pinia').acceptHMRUpdate
   const asyncComputed: typeof import('@vueuse/core').asyncComputed
   const autoResetRef: typeof import('@vueuse/core').autoResetRef
@@ -63,6 +65,7 @@ declare global {
   const mapWritableState: typeof import('pinia').mapWritableState
   const markRaw: typeof import('vue').markRaw
   const match: typeof import('@/shared/utils').match
+  const maxLength: typeof import('@/shared/utils').maxLength
   const minLength: typeof import('@/shared/utils').minLength
   const nextTick: typeof import('vue').nextTick
   const onActivated: typeof import('vue').onActivated
@@ -110,6 +113,7 @@ declare global {
   const shallowReactive: typeof import('vue').shallowReactive
   const shallowReadonly: typeof import('vue').shallowReadonly
   const shallowRef: typeof import('vue').shallowRef
+  const specialChars: typeof import('@/shared/utils').specialChars
   const storeToRefs: typeof import('pinia').storeToRefs
   const syncRef: typeof import('@vueuse/core').syncRef
   const syncRefs: typeof import('@vueuse/core').syncRefs
@@ -336,7 +340,9 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly MAXIMUM_LENGTH: UnwrapRef<typeof import('@/shared/constants')['MAXIMUM_LENGTH']>
     readonly MINIMUM_LENGTH: UnwrapRef<typeof import('@/shared/constants')['MINIMUM_LENGTH']>
+    readonly SPECIAL_CHARACTERS: UnwrapRef<typeof import('@/shared/constants')['SPECIAL_CHARACTERS']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
@@ -389,6 +395,8 @@ declare module 'vue' {
     readonly mapStores: UnwrapRef<typeof import('pinia')['mapStores']>
     readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly match: UnwrapRef<typeof import('@/shared/utils')['match']>
+    readonly maxLength: UnwrapRef<typeof import('@/shared/utils')['maxLength']>
     readonly minLength: UnwrapRef<typeof import('@/shared/utils')['minLength']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
@@ -436,6 +444,7 @@ declare module 'vue' {
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly specialChars: UnwrapRef<typeof import('@/shared/utils')['specialChars']>
     readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
     readonly syncRef: UnwrapRef<typeof import('@vueuse/core')['syncRef']>
     readonly syncRefs: UnwrapRef<typeof import('@vueuse/core')['syncRefs']>

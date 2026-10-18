@@ -1,16 +1,15 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const requiredMsg = useChangeCase(t('auth.loginPasswordRequired'), 'sentenceCase')
-const lengthMsg = useChangeCase(t('auth.loginPasswordLength'), 'sentenceCase')
-const inputLabel = useChangeCase(t('auth.loginPasswordLabel'), 'sentenceCase')
-const rules = [
-  required(requiredMsg.value),
-  minLength(lengthMsg.value + ' ' + MINIMUM_LENGTH, MINIMUM_LENGTH),
-]
+const rules = [required(t('auth.passwordRequired'))]
 </script>
 
 <template>
-  <TextField type="password" :label="inputLabel" :rules="rules" />
+  <TextField
+    type="password"
+    :label="$t('auth.passwordLabel')"
+    :rules="rules"
+    :max-errors="rules.length"
+  />
 </template>
 
 <style scoped></style>

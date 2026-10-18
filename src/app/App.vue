@@ -3,6 +3,7 @@ import 'vuetify/styles'
 </script>
 
 <template>
+  <Header />
   <RouterView></RouterView>
 </template>
 

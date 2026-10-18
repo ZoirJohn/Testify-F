@@ -1,2 +1,2 @@
-import { MINIMUM_LENGTH } from '@/shared/constants/password'
-export { MINIMUM_LENGTH }
+import { MINIMUM_LENGTH, MAXIMUM_LENGTH, SPECIAL_CHARACTERS } from '@/shared/constants/password'
+export { MINIMUM_LENGTH, MAXIMUM_LENGTH, SPECIAL_CHARACTERS }

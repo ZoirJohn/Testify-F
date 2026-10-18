@@ -11,11 +11,16 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ConfirmPasswordField: typeof import('@/entities/Signup')['ConfirmPasswordField']
+    EmailField: typeof import('@/entities/Signup')['EmailField']
+    Header: typeof import('@/widgets/Header')['Header']
     LoginForm: typeof import('@/widgets/LoginForm')['LoginForm']
     LoginPage: typeof import('@/pages/LoginPage')['LoginPage']
     PasswordField: typeof import('@/entities/Login')['PasswordField']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SignupForm: typeof import('@/widgets/SignupForm')['SignupForm']
+    SignupPasswordField: typeof import('@/entities/Signup')['SignupPasswordField']
     TextField: typeof import('./../../shared/ui/TextField.vue')['default']
     UsernameField: typeof import('@/entities/Login')['UsernameField']
   }

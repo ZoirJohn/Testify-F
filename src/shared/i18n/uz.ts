@@ -1,6 +1,22 @@
 export const uz = {
-  auth:{
-
-    loginUsernameLabel: 'Foydalanuvchi ismi',
-  }
+  auth: {
+    usernameLabel: 'Foydalanuvchi nomi',
+    passwordLabel: 'Parol',
+    usernameRequired: 'Foydalanuvchi nomi kiritilishi shart',
+    passwordRequired: 'Parol kiritilishi shart',
+    minimumLength: 'Minimal uzunlik ',
+    maximumLength: 'Maksimal uzunlik ',
+    loginButtonLabel: 'Kirish',
+    signupButtonLabel: "Ro'yxatdan o'tish",
+    loginFormTitle: 'Kirish',
+    signupFormTitle: "Ro'yxatdan o'tish",
+    emailLabel: 'Elektron pochta',
+    emailRequired: 'Elektron pochta manzili kiritilishi shart',
+    confirmPassword: 'Parolni tasdiqlash',
+    confirmPasswordRequired: 'Parolni tasdiqlash shart',
+    confirmNoMatch: 'Parollar mos kelmaydi',
+    passwordSpecialChar: 'Kamida bitta maxsus belgi | Kamida {number} ta maxsus belgi',
+    haveAccountToLogin: 'Hisobingiz bormi? Kiring',
+    haveNoAccountToSignup: "Hisobingiz yo'qmi? Ro'yxatdan o'ting",
+  },
 }
