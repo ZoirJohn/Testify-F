@@ -1,9 +1,9 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path'
 
-const layers = ['entities', 'widgets','pages']
+const layers = ['entities', 'widgets','pages','shared']
 
-function exportedComponents(src: string): string[] {
+function exportedNames(src: string, componentsOnly: boolean): string[] {
   const names: string[] = []
   for (const block of src.matchAll(/export\s*\{([^}]*)\}/g)) {
     for (const part of block[1].split(',')) {
@@ -13,7 +13,7 @@ function exportedComponents(src: string): string[] {
         .split(/\s+as\s+/)
         .pop()!
         .trim()
-      if (/^[A-Z]/.test(name)) names.push(name)
+      if (!componentsOnly || /^[A-Z]/.test(name)) names.push(name)
     }
   }
   return names
@@ -28,7 +28,7 @@ for (const layer of layers) {
     if (!d.isDirectory()) continue
     const index = resolve(root, d.name, 'index.ts')
     if (!existsSync(index)) continue
-    for (const name of exportedComponents(readFileSync(index, 'utf8'))) {
+    for (const name of exportedNames(readFileSync(index, 'utf8'), layer !== 'shared')) {
       map.set(name, `@/${layer}/${d.name}`)
     }
   }

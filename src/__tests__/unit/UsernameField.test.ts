@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, fireEvent } from '@testing-library/vue'
-import UsernameField  from '@/entities/Login/ui/UsernameField.vue'
+import { UsernameField } from '@/entities/Login'
 
 describe('Username field component tests', () => {
   it('should raise error when a value does not pass rules', async () => {
@@ -13,7 +13,7 @@ describe('Username field component tests', () => {
       },
     })
 
-    await fireEvent.update(getByLabelText('Username'), 'Alexa')
+    await fireEvent.update(getByLabelText('Username'), 'Alex')
 
     expect(getByText(lengthErrMsg)).toBeTruthy()
   })

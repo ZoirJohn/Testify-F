@@ -11,6 +11,7 @@ async function handleSubmit() {
   if (!valid) {
     return
   }
+  console.log(payload.value)
 }
 </script>
 
@@ -23,8 +24,11 @@ async function handleSubmit() {
       <v-card-title class="px-0 pt-0 text-capitalize"
         >{{ $t('auth.loginFormTitle') }}
       </v-card-title>
-      <UsernameField v-model="payload.username" required />
-      <PasswordField v-model="payload.password" required />
+      <UsernameField v-model="payload.username" />
+      <PasswordField v-model="payload.password" />
+      <RouterLink to="/signup" class="align-self-center mb-4">
+        {{ $t('auth.haveNoAccountToSignup') }}
+      </RouterLink>
       <v-btn
         class="flex-grow-0 align-self-end text-capitalize bg-blue-grey-darken-3"
         :loading="false"

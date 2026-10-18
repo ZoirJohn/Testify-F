@@ -3,7 +3,8 @@ import 'vuetify/styles'
 </script>
 
 <template>
-  <LoginPage />
+  <Header />
+  <RouterView></RouterView>
 </template>
 
 <style>
